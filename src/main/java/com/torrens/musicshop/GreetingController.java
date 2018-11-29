@@ -4,7 +4,6 @@ import com.torrens.musicshop.domain.Instrument;
 import com.torrens.musicshop.repos.InstrumentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,9 +16,8 @@ public class GreetingController {
     @Autowired
     private InstrumentRepo instrumentRepo;
 
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
+    @GetMapping("/")
+    public String greeting(Map<String,Object> model) {
         return "greeting";
     }
 
@@ -38,8 +36,7 @@ public class GreetingController {
 
     @PostMapping("/addInstrument")
     public String addInstrument(@RequestParam String type, @RequestParam String title,
-                              @RequestParam String description, @RequestParam float price,
-                              Map<String, Object> model){
+                              @RequestParam String description, @RequestParam float price){
         Instrument instrument = new Instrument(type,title,description,price);
         instrumentRepo.save(instrument);
         return "redirect:/mainPage";

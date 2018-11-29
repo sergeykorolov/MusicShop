@@ -3,6 +3,8 @@
     <title>greeting</title>
 </head>
 <body>
-    <p>Hello, ${name}!</p>
+    <div>Hello, user</div>
+    <a href="/mainPage">Main page</a>
+
 </body>
 </html>
