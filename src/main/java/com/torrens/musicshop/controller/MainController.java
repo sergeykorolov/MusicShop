@@ -1,4 +1,4 @@
-package com.torrens.musicshop;
+package com.torrens.musicshop.controller;
 
 import com.torrens.musicshop.domain.Instrument;
 import com.torrens.musicshop.repos.InstrumentRepo;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Map;
 
 @Controller
-public class GreetingController {
+public class MainController {
 
     @Autowired
     private InstrumentRepo instrumentRepo;
