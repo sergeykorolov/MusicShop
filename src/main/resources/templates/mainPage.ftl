@@ -17,12 +17,14 @@
 
     <div class="body">
         <#list instruments as instrument>
-            <div class="item">
-                <b>${instrument.type}</b>
-                <b>${instrument.title}</b>
-                <b>${instrument.description}</b>
-                <b>${instrument.price}</b>
-            </div>
+            <a href="/musicShop/instrumentPage?instrumentId=${instrument.id}">
+                <div class="item">
+                    <b>${instrument.type}</b>
+                    <b>${instrument.title}</b>
+                    <b>${instrument.description}</b>
+                    <b>${instrument.price}</b>
+                </div>
+            </a>
         </#list>
     </div>
 
