@@ -1,7 +1,11 @@
 package com.torrens.musicshop.repos;
 
 import com.torrens.musicshop.domain.Comment;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CommentRepo extends CrudRepository<Comment, Long> {
+import java.util.List;
+
+public interface CommentRepo extends JpaRepository<Comment, Integer> {
+
+    List<Comment> findByInstrumentId(Integer instrumentId);
 }

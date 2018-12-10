@@ -13,14 +13,24 @@ public class Comment {
     private String text;
     private Date date;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
     private User author;
+
+    private Integer instrumentId;
 
     public Comment() {
     }
 
-    public Comment(String text, Date date) {
+    public Comment(String text, Date date, User user, Integer instrumentId) {
         this.text = text;
         this.date = date;
+        this.author = user;
+        this.instrumentId = instrumentId;
+    }
+
+    public String getAuthorName(){
+        return author != null ? author.getUsername() : "<никто>";
     }
 
     public Integer getId() {
@@ -53,5 +63,13 @@ public class Comment {
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    public Integer getInstrumentId() {
+        return instrumentId;
+    }
+
+    public void setInstrumentId(Integer instrumentId) {
+        this.instrumentId = instrumentId;
     }
 }

@@ -23,6 +23,7 @@
 
     <#list comments as comment>
         <div>
+            <b>${comment.authorName}: </b>
             <i>${comment.text}</i>
             <i>${comment.date}</i>
         </div>
