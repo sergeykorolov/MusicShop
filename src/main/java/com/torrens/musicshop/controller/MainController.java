@@ -8,11 +8,13 @@ import com.torrens.musicshop.repos.InstrumentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.*;
+import java.util.Date;
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -29,10 +31,10 @@ public class MainController {
     }
 
     @GetMapping("/mainPage")
-    public String mainPage(Map<String, Object> model) {
+    public String mainPage(Model model) {
 
         Iterable<Instrument> instruments = instrumentRepo.findAll();
-        model.put("instruments", instruments);
+        model.addAttribute("instruments", instruments);
         return "mainPage";
     }
 
@@ -52,14 +54,14 @@ public class MainController {
     }
 
     @GetMapping("/musicShop/instrumentPage")
-    public String getInstrument(@RequestParam(name = "instrumentId") Integer id,
-                                Map<String, Object> model) {
+    public String getInstrument(@RequestParam(name = "instrumentId") Integer instrumentId,
+                                Model model) {
 
-        Instrument instrument = instrumentRepo.getOne(id);
-        model.put("instrument", instrument);
+        Instrument instrument = instrumentRepo.getOne(instrumentId);
+        model.addAttribute("instrument", instrument);
 
-        List<Comment> comments = commentRepo.findByInstrumentId(id);
-        model.put("comments", comments);
+        List<Comment> comments = commentRepo.findByInstrumentId(instrumentId);
+        model.addAttribute("comments", comments);
 
         return "instrumentPage";
     }

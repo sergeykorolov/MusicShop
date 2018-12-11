@@ -1,15 +1,10 @@
 <html>
 <head>
-    <title>Spring Security Example </title>
+    <title>Registration</title>
 </head>
 <body>
 Add new user
-<#--<#if message.>-->
-    <#--${message}-->
-<#--<#else>-->
-    <#--message-->
-<#--</#if>-->
-
+${message?ifExists}
 <form action="/registration" method="post">
     <div><label> Username : <input type="text" name="username"/> </label></div>
     <div><label> Email : <input type="email" name="email"/> </label></div>

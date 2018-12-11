@@ -1,10 +1,6 @@
-<html>
-<head>
-    <title>greeting</title>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+
+<@c.page>
     <div>Hello, user</div>
     <a href="/mainPage">Main page</a>
-
-</body>
-</html>
+</@c.page>

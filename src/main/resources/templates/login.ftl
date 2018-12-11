@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Spring Security Example </title>
+    <title>Login</title>
 </head>
 <body>
 Login page
