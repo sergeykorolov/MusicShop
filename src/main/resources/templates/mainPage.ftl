@@ -10,6 +10,8 @@
         <input type="submit" value="Sign Out"/>
     </form>
 
+    <span><a href="/user">User list</a></span>
+
     <div class="header">
         <div class="logo">logo</div>
         <div class="username">username</div>
