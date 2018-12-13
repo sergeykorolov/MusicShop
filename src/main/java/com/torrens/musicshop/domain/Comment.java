@@ -18,6 +18,7 @@ public class Comment {
     private User author;
 
     private Integer instrumentId;
+    private String filename;
 
     public Comment() {
     }
@@ -71,5 +72,13 @@ public class Comment {
 
     public void setInstrumentId(Integer instrumentId) {
         this.instrumentId = instrumentId;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 }
