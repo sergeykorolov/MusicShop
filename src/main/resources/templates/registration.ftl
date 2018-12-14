@@ -1,8 +1,6 @@
-<html>
-<head>
-    <title>Registration</title>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+
+<@c.page>
 Add new user
 ${message?ifExists}
 <form action="/registration" method="post">
@@ -12,5 +10,4 @@ ${message?ifExists}
     <input type="hidden" name="_csrf" value="${_csrf.token}">
     <div><input type="submit" value="Sign In"/></div>
 </form>
-</body>
-</html>
+</@c.page>

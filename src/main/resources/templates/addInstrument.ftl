@@ -1,10 +1,7 @@
-<html>
-<head>
-    <title>Add instrument</title>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
 
-    <h3>Добавление инструмента</h3>
+<@c.page>
+<h3>Добавление инструмента</h3>
 
     <div>
         <form method="post">
@@ -16,5 +13,4 @@
             <button type="submit">Добавить</button>
         </form>
     </div>
-</body>
-</html>
+</@c.page>

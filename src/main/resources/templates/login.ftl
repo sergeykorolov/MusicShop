@@ -1,8 +1,6 @@
-<html>
-<head>
-    <title>Login</title>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+
+<@c.page>
 Login page
 <form action="/login" method="post">
     <div><label> Username : <input type="text" name="username"/> </label></div>
@@ -11,5 +9,4 @@ Login page
     <div><input type="submit" value="Sign In"/></div>
 </form>
 <a href="/registration">Sign up</a>
-</body>
-</html>
+</@c.page>

@@ -1,8 +1,6 @@
-<html>
-<head>
-    <title>Instrument page</title>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+
+<@c.page>
 <div class="body">
     <b>${instrument.type}</b>
     <b>${instrument.title}</b>
@@ -35,5 +33,4 @@
     <#else>
         <i>No message</i>
     </#list>
-</body>
-</html>
+</@c.page>

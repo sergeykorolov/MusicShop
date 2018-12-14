@@ -1,21 +1,12 @@
-<html>
-<head>
-    <title>Main page</title>
-    <link href="css/mainPage.css" type="text/css" rel="stylesheet">
-</head>
-<body>
+<#import "parts/common.ftl" as c>
 
-    <form action="/logout" method="post">
-        <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <input type="submit" value="Sign Out"/>
-    </form>
+<@c.page>
+<form action="/logout" method="post">
+    <input type="hidden" name="_csrf" value="${_csrf.token}">
+    <input type="submit" value="Sign Out"/>
+</form>
 
     <span><a href="/user">User list</a></span>
-
-    <div class="header">
-        <div class="logo">logo</div>
-        <div class="username">username</div>
-    </div>
 
     <div class="body">
         <#list instruments as instrument>
@@ -29,6 +20,5 @@
             </a>
         </#list>
     </div>
+</@c.page>
 
-</body>
-</html>
