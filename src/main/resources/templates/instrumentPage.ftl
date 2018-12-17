@@ -9,28 +9,47 @@
 </div>
 
 <div>Comments</div>
-
-<div>
-    <form action="/musicShop/instrumentPage" method="post" enctype="multipart/form-data">
-        <input type="text" name="text" placeholder="Enter comment">
-        <input type="hidden" name="instrumentId" value="${instrument.id}">
-        <input type="file" name="file">
-        <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <button type="submit">Add comment</button>
-    </form>
+<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+   aria-controls="collapseExample">
+    Add new message
+</a>
+<div class="collapse" id="collapseExample">
+    <div class="form-group mt-3">
+        <form action="/musicShop/instrumentPage" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="text" class="form-control" name="text" placeholder="Enter comment">
+            </div>
+            <input type="hidden" name="instrumentId" value="${instrument.id}">
+            <div class="form-group">
+                <div class="custom-file">
+                    <input type="file" name="file" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+            </div>
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Add comment</button>
+            </div>
+        </form>
+    </div>
 </div>
+
+<div class="card-columns">
     <#list comments as comment>
-        <div>
-            <b>${(comment.author.username)!"&lt;none&gt;"}: </b>
+    <div class="card my-3">
+        <#if comment.filename??>
+                <img src="/img/${comment.filename}" class="card-img-top">
+        </#if>
+        <div class="m-2">
             <i>${comment.text}</i>
             <i>${comment.date}</i>
-            <div>
-                <#if comment.filename??>
-                    <img src="/img/${comment.filename}">
-                </#if>
-            </div>
         </div>
+        <div class="card-footer text-muted">
+            ${comment.authorName}
+        </div>
+    </div>
     <#else>
-        <i>No message</i>
+    <i>No message</i>
     </#list>
+</div>
 </@c.page>
