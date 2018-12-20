@@ -34,11 +34,6 @@ public class MainController {
     private String uploadPath;
 
     @GetMapping("/")
-    public String greeting() {
-        return "greeting";
-    }
-
-    @GetMapping("/mainPage")
     public String mainPage(Model model) {
 
         Iterable<Instrument> instruments = instrumentRepo.findAll();

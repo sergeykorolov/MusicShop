@@ -8,8 +8,7 @@ public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-
+    private Long id;
     private String text;
     private Date date;
 
@@ -34,11 +33,11 @@ public class Comment {
         return author != null ? author.getUsername() : "<никто>";
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

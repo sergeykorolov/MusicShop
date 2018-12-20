@@ -1,3 +1,10 @@
+spring.datasource.url=jdbc:postgresql://localhost/musicshop
+spring.datasource.username=******
+spring.datasource.password=******
+spring.jpa.generate-ddl=true
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=create
+
 spring.freemarker.expose-request-attributes=true
 
 upload.path=/D:/Projects/MyProjects/MusicShop/uploads

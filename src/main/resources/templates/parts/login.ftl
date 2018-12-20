@@ -21,14 +21,21 @@
     </div>
     </#if>
     <input type="hidden" name="_csrf" value="${_csrf.token}" />
-    <#if !isRegisterForm><a href="/registration">Sign Up</a></#if>
-    <button class="btn btn-primary" type="submit"><#if isRegisterForm>Create<#else>Sign In</#if></button>
+    <#if !isRegisterForm><a href="/registration">Зарегистрироваться</a></#if>
+    <button class="btn btn-primary" type="submit"><#if isRegisterForm>Готово<#else>Войти</#if></button>
 </form>
 </#macro>
 
 <#macro logout>
 <form action="/logout" method="post">
     <input type="hidden" name="_csrf" value="${_csrf.token}" />
-    <button class="btn btn-primary" type="submit">Sign Out</button>
+    <button class="btn btn-primary" type="submit">Выйти</button>
 </form>
+</#macro>
+
+<#macro enter>
+    <form action="/login" method="get">
+        <input type="hidden" name="_csrf" value="${_csrf.token}" />
+        <button class="btn btn-primary" type="submit">Войти</button>
+    </form>
 </#macro>
