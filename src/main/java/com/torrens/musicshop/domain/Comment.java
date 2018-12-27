@@ -1,6 +1,9 @@
 package com.torrens.musicshop.domain;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
@@ -9,20 +12,24 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotBlank(message = "Please fill the message")
+    @Length(max = 2048, message = "Message to long (more than 2kB)")
     private String text;
+
     private Date date;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User author;
 
-    private Integer instrumentId;
+    private Long instrumentId;
     private String filename;
 
     public Comment() {
     }
 
-    public Comment(String text, Date date, User user, Integer instrumentId) {
+    public Comment(String text, Date date, User user, Long instrumentId) {
         this.text = text;
         this.date = date;
         this.author = user;
@@ -65,11 +72,11 @@ public class Comment {
         this.author = author;
     }
 
-    public Integer getInstrumentId() {
+    public Long getInstrumentId() {
         return instrumentId;
     }
 
-    public void setInstrumentId(Integer instrumentId) {
+    public void setInstrumentId(Long instrumentId) {
         this.instrumentId = instrumentId;
     }
 

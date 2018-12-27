@@ -4,7 +4,7 @@ create table comment (
     id int8 not null,
     date timestamp,
     filename varchar(255),
-    instrument_id int4,
+    instrument_id int8,
     text varchar(2048) not null,
     user_id int8,
     primary key (id)

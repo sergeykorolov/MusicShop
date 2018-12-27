@@ -13,11 +13,17 @@
    aria-controls="collapseExample">
     Add new message
 </a>
-<div class="collapse" id="collapseExample">
+<div class="collapse <#if comment??>show</#if>" id="collapseExample">
     <div class="form-group mt-3">
-        <form action="/musicShop/instrumentPage" method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <input type="text" class="form-control" name="text" placeholder="Enter comment">
+                <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
+                       value="<#if comment??>${comment.text}</#if>" name="text" placeholder="Enter comment"/>
+                <#if textError??>
+                    <div class="invalid-feedback">
+                        ${textError}
+                    </div>
+                </#if>
             </div>
             <input type="hidden" name="instrumentId" value="${instrument.id}">
             <div class="form-group">
@@ -42,7 +48,7 @@
         </#if>
         <div class="m-2">
             <i>${comment.text}</i>
-            <i>${comment.date}</i>
+            <i>${comment.date?datetime}</i>
         </div>
         <div class="card-footer text-muted">
             ${comment.authorName}

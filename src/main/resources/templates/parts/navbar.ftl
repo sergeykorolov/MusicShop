@@ -22,7 +22,10 @@
         </ul>
 
         <div class="navbar-text mr-3">${name}</div>
-        <@l.enter/>
-        <@l.logout/>
+        <#if name == "" >
+            <@l.enter/>
+        <#else>
+            <@l.logout/>
+        </#if>
     </div>
 </nav>
