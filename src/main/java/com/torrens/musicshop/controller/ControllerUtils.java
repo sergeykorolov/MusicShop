@@ -14,7 +14,6 @@ class ControllerUtils {
                 fieldError -> fieldError.getField() + "Error",
                 FieldError::getDefaultMessage
         );
-        System.out.println(bindingResult.getFieldErrors().stream().collect(collector));
         return bindingResult.getFieldErrors().stream().collect(collector);
     }
 }
