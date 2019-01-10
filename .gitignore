@@ -1,8 +1,8 @@
-*.class
-*.jar
-target
-.idea
-*.iml
-uploads
+//*.class
+//*.jar
+//target
+//.idea
+//*.iml
+//uploads
 
 //*.properties
