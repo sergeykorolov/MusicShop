@@ -8,6 +8,7 @@ com\torrens\musicshop\config\MailConfig.class
 com\torrens\musicshop\domain\Role.class
 com\torrens\musicshop\domain\dto\CaptchaResponseDto.class
 com\torrens\musicshop\config\WebSecurityConfig.class
+com\torrens\musicshop\config\EncriptionConfig.class
 com\torrens\musicshop\service\MailSender.class
 com\torrens\musicshop\domain\Instrument.class
 com\torrens\musicshop\repos\UserRepo.class
