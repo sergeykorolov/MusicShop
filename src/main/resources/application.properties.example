@@ -1,9 +1,9 @@
 spring.datasource.url=jdbc:postgresql://localhost/musicshop
 spring.datasource.username=******
 spring.datasource.password=******
-spring.jpa.generate-ddl=true
-spring.jpa.show-sql=true
-spring.jpa.hibernate.ddl-auto=create
+spring.jpa.generate-ddl=false
+spring.jpa.show-sql=false
+spring.jpa.hibernate.ddl-auto=validate
 
 spring.freemarker.expose-request-attributes=true
 
@@ -18,4 +18,11 @@ spring.mail.port=587
 spring.mail.protocol=smtp
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
-mail.debug=true
+mail.debug=false
+
+recaptcha.secret=6LfnVIUUAAAAAFS-M92zJnVpy9naK7PmQDt38-Fi
+
+spring.session.jdbc.initialize-schema=always
+spring.session.jdbc.table-name=SPRING_SESSION
+
+hostname=192.168.119.128
