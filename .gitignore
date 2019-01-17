@@ -1,8 +1,7 @@
 *.class
 *.jar
+*.iml
+*.properties
+uploads
 target
 .idea
-*.iml
-uploads
-
-*.properties
