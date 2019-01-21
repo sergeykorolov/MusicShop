@@ -6,11 +6,11 @@ echo 'Copy files...'
 
 scp -i ~/.ssh/id_rsa \
     target/musicshop-1.0-SNAPSHOT.jar \
-    user@192.168.119.128:/home/user/
+    user@192.168.0.106:/home/user/
 
 echo 'Restart server...'
 
-ssh -i ~/.ssh/id_rsa user@192.168.119.128 << EOF
+ssh -i ~/.ssh/id_rsa user@192.168.0.106 << EOF
 pgrep java | xargs kill -9
 nohup java -jar musicshop-1.0-SNAPSHOT.jar > log.txt &
 EOF
