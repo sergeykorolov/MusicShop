@@ -129,6 +129,10 @@ public class MainController {
     ){
         Set<Comment> comments = user.getComments();
 
+        model.addAttribute("userChannel",user);
+        model.addAttribute("subscriptionsCount", user.getSubscriptions().size());
+        model.addAttribute("subscribersCount", user.getSubscribers().size());
+        model.addAttribute("isSubscriber", user.getSubscribers().contains(currentUser));
         model.addAttribute("comments", comments);
         model.addAttribute("comment", comment);
         model.addAttribute("isCurrentUser", currentUser.equals(user));
